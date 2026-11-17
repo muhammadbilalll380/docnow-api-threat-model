@@ -1,0 +1,23 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Threat Model" id="tm1">
+    <mxGraphModel dx="1000" dy="600" grid="1" gridSize="10" page="1" pageWidth="1100" pageHeight="600">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="zone1" value="Internet (Untrusted)" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;verticalAlign=top;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="20" y="100" width="180" height="260" as="geometry"/></mxCell>
+        <mxCell id="zone2" value="DMZ" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;verticalAlign=top;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="230" y="100" width="180" height="260" as="geometry"/></mxCell>
+        <mxCell id="zone3" value="Internal Network (Trusted)" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;verticalAlign=top;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="440" y="100" width="420" height="260" as="geometry"/></mxCell>
+        <mxCell id="client" value="Client (Web / Mobile)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;" vertex="1" parent="1"><mxGeometry x="40" y="190" width="140" height="70" as="geometry"/></mxCell>
+        <mxCell id="gateway" value="API Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="250" y="190" width="140" height="70" as="geometry"/></mxCell>
+        <mxCell id="service" value="DocNow Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="1"><mxGeometry x="470" y="190" width="140" height="70" as="geometry"/></mxCell>
+        <mxCell id="db" value="Database" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#e1d5e7;" vertex="1" parent="1"><mxGeometry x="700" y="180" width="110" height="90" as="geometry"/></mxCell>
+        <mxCell id="e1" value="HTTPS + JWT" style="endArrow=classic;html=1;" edge="1" parent="1" source="client" target="gateway"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" value="Routed request" style="endArrow=classic;html=1;" edge="1" parent="1" source="gateway" target="service"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="SQL query" style="endArrow=classic;html=1;" edge="1" parent="1" source="service" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="t1" value="Threats:&lt;br&gt;- Token theft / weak auth (API2)&lt;br&gt;- Rate limit abuse / DoS (API4)" style="text;html=1;align=left;whiteSpace=wrap;fontColor=#b85450;" vertex="1" parent="1"><mxGeometry x="30" y="380" width="260" height="60" as="geometry"/></mxCell>
+        <mxCell id="t2" value="Threats:&lt;br&gt;- BOLA / BFLA (API1, API5)&lt;br&gt;- Excessive data exposure (API3)&lt;br&gt;- Misconfiguration (API8)" style="text;html=1;align=left;whiteSpace=wrap;fontColor=#b85450;" vertex="1" parent="1"><mxGeometry x="300" y="380" width="300" height="80" as="geometry"/></mxCell>
+        <mxCell id="t3" value="Threats:&lt;br&gt;- Injection (SQLi)&lt;br&gt;- Data leakage" style="text;html=1;align=left;whiteSpace=wrap;fontColor=#b85450;" vertex="1" parent="1"><mxGeometry x="640" y="380" width="220" height="60" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
