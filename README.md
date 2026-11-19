@@ -3,7 +3,8 @@
 This repository contains a threat model and a security test plan for the DocNow API, based on the OWASP API Security Top 10.
 
 ## Contents
-- `docs/threat-model.drawio`: data flow diagram with trust boundaries and threats
+- [Security Test Plan](docs/test-plan.md): 10 test cases with tools and expected outcomes
+- [Threat Model Diagram](docs/threat-model.drawio): data flow diagram with trust boundaries
 
 ## Scope
 Client -> API Gateway -> Service -> Database
